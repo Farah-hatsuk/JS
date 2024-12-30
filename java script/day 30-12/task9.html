@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    /*
+    9.
+    Write a JavaScript function that returns rate as text
+    less than 50 return ==> Fail
+    equal or between 50 and 59 ===> E
+    equal or between 60 and 69 ===> D
+    equal or between 70 and 79 ===> C
+    equal or between 80 and 89 ===> B
+    equal or between 90 and 100 ===> A 
+    */
+
+    function grad (i){
+        if ( i < 50) { return"Fail" ;}
+        else if (50 <= i && i <= 59) {return "E" ;}
+        else if (60 <= i && i <= 69) {return "D" ;}
+        else if (70 <= i && i <= 79) {return "C" ;}
+        else if (80 <= i && i <= 89) {return "B" ;}
+        else if (90 <= i && i <= 100) {return "A";}
+
+    }
+
+    console.log(grad (75));
+
+
+    </script>
+    
+</body>
+</html>
