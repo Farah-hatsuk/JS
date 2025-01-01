@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select name="fonts" id="Family" onchange="changeFont()">
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Fantasy">Fantasy</option>
+    </select>
+
+
+    <select name="Size" id="Size" onchange="changeSize()">
+        <option value="10px">10px</option>
+        <option value="15px">15px</option>
+    </select>
+
+
+    <input type="checkbox" id="italic" onchange="changeToItalic()">
+    <label for="italic">Italic</label>
+
+    <input type="checkbox" id="bold" onchange="changeToBold ()">
+    <label for="bold">Bold</label>
+
+    <input type="checkbox" id="underline" onchange="changeToUnderline()">
+    <label for="underline">Underline</label>
+
+    <br><br>
+
+    <p id="p" style="border: 3px solid; width: 40%; height: 60px; padding-left: 6px; padding-top: 7px;" >  the quick brown fox over the lazy dog </p>
+
+
+
+
+
+
+
+    <script>
+
+        function changeFont() {
+            let selectedFontFamily = document.getElementById("Family").value;
+            document.getElementById("p").style.fontFamily = selectedFontFamily;
+
+        }
+
+        function changeSize() {
+            let selectedFontSize = document.getElementById("Size").value;
+            document.getElementById("p").style.fontSize = selectedFontSize;
+        }
+
+
+        function changeToItalic() {
+            // document.getElementById("p").style.fontStyle="italic";
+            if (document.getElementById("italic").checked) {
+                document.getElementById("p").style.fontStyle = "italic";
+
+            }
+            else {
+                document.getElementById("p").style.fontStyle = "normal";
+
+            }
+
+
+        }
+
+        function changeToBold (){
+            if (document.getElementById("bold").checked) {
+                document.getElementById("p").style.fontWeight="Bold";
+            }
+            else{
+                document.getElementById("p").style.fontWeight= "normal" ;
+            }
+
+        }
+
+
+        function changeToUnderline(){
+            if ( document.getElementById("underline").checked) {
+                document.getElementById("p"). style.textDecoration ="Underline";
+            }
+            else {
+                document.getElementById("p").style.textDecoration ="none" ;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
