@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form style="border: 3px solid; padding: 25px;" onsubmit="saveToLocal(event)">
+        <label>name :</label>
+        <input type="text" id="name" value>
+
+        <br><br>
+
+        <label>Age :</label>
+        <input type="number" id="age" value>
+
+        <br><br>
+
+        <label>Gender :</label>
+        <input type="text" id="gender" value>
+
+        <br><br>
+
+        <label>Birth Date :</label>
+        <input type="date" id="birth" value>
+
+        <br><br>
+
+        <label>Upload your Image :</label>
+        <input type="file" id="upload" value>
+
+        <br>
+        <hr>
+
+        <label>Description :</label>
+        <input type="text" id="description" value>
+
+        <br><br>
+
+        <label>Major & University :</label>
+        <input type="text" id="major" value>
+
+        <br><br>
+
+        <label>Programming Language :</label>
+        <div id="checkbox">
+            <input type="checkbox" id="html" name="html" value="html">
+            <label for="html"> HTML </label>
+            <input type="checkbox" id="css" name="css" value="css">
+            <label for="css"> CSS </label>
+            <input type="checkbox" id="js" name="js" value="js">
+            <label for="js"> JavaScript </label>
+        </div>
+
+        <br>
+        <hr>
+
+        <label>Sibling Number:</label>
+        <input type="number" id="number" value>
+
+        <br><br>
+
+        <label>Description of Sibling :</label>
+        <input type="text" id="DN" value>
+
+        <br><br>
+
+        <button id="Submit">Submit</button>
+
+
+        <div id="outputs"></div>
+
+
+
+    </form>
+
+
+
+    <script>
+        function saveToLocal(event) {
+            event.preventDefault();
+
+
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("Age", document.getElementById("age").value);
+            localStorage.setItem("Gender", document.getElementById("gender").value);
+            localStorage.setItem("Birth Date", document.getElementById("birth").value);
+            localStorage.setItem("Upload your Image", document.getElementById("upload").value);
+            localStorage.setItem("Description", document.getElementById("description").value);
+            localStorage.setItem("Major & University", document.getElementById("major").value);
+
+            localStorage.setItem("Programming Language", document.getElementById("checkbox").value);
+            let programmingLanguages = [];
+            if (document.getElementById("html").checked) programmingLanguages.push("HTML");
+            if (document.getElementById("css").checked) programmingLanguages.push("CSS");
+            if (document.getElementById("js").checked) programmingLanguages.push("JavaScript");
+
+            localStorage.setItem("Programming Language", programmingLanguages.join(", ") || "None selected");
+
+            localStorage.setItem("Sibling Number", document.getElementById("number").value);
+            localStorage.setItem("Description of Sibling", document.getElementById("DN").value);
+        }
+
+
+
+        function showLocal() {
+            
+
+            document.getElementById("outputs").innerText =
+                "name Output: " + localStorage.getItem("name") + "\n" +
+                "Age Output: " + localStorage.getItem("Age") + "\n" +
+                "Gender Output: " + localStorage.getItem("Gender") + "\n" +
+                "Birth Date Output: " + localStorage.getItem("Birth Date") + "\n" +
+                "Image Output: " + localStorage.getItem("Upload your Image") + "\n" +
+                "Description Output: " + localStorage.getItem("Description") + "\n" +
+                "Major & University Output: " + localStorage.getItem("Major & University") + "\n" +
+                "Programming Language Output: " + localStorage.getItem("Programming Language") + "\n" +
+                "Sibling Number Output: " + localStorage.getItem("Sibling Number") + "\n" +
+                "Description of Sibling Output: " + localStorage.getItem("Description of Sibling");
+        }
+
+
+       
+
+
+        const submitButton = document.getElementById("Submit");
+        submitButton.addEventListener('click', saveToLocal);
+        submitButton.addEventListener('click', showLocal);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./task2.css">
+</head>
+
+<body>
+    <nav>
+
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+
+        <ul id="menuList">
+
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articals</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact us</a></li>
+
+        </ul>
+
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="menu()"></i>
+        </div>
+
+    </nav>
+
+
+
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight="0px"
+
+
+        function menu() {
+            if(menuList.style.maxHeight=="0px"){
+                menuList.style.maxHeight="300px"
+            }
+            else{
+                menuList.style.maxHeight="0px"
+            }
+            
+        }
+    </script>
+
+
+    <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
