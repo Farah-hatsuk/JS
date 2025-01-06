@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #img{
+            width: 20%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <select id="flags" name="flags" >
+            <option value="jordan">jordan</option>
+            <option value="palestine">palestine</option>
+        </select>
+        
+    </form>
+    <img id="img" src="./img/jordan.jpg" alt="" srcset="">
+    
+
+    <script>
+
+        let flag=document.getElementById("flags")
+
+        flag.addEventListener("change", function(){
+            flags (flag)
+        })
+
+        function flags (flag) {
+            if(flag.value =="jordan"){
+                document.getElementById("img").src= "/img/jordan.jpg"
+            }
+            else{
+                document.getElementById("img").src="./img/palestine.jpg"
+            }
+        }
+
+    </script>
+</body>
+</html>
